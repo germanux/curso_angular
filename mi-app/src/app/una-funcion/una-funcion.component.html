@@ -2,6 +2,19 @@
 <input type="button" value="Pulsar" (click)="mostrarDatos()" />
 <br/>
 <input type="text" [(ngModel)]="nombre" />
+<input type="button" (click)="anadirDatos()" value="Añadir" />
 <br/> {{ nombre }}
 <input type="text" [(ngModel)]="nombre" readonly />
 <br/>
+<p *ngIf="nombre === nombre.toUpperCase()">
+    Está en mayúsculas
+</p>
+<p *ngIf="nombre !== nombre.toUpperCase()">
+    >>> No está en mayúsculas
+</p>
+Long: {{ datos.length }}
+<ul>
+    <li *ngFor="let undato of datos">
+        Dato: {{ undato }}
+    </li>
+</ul>
