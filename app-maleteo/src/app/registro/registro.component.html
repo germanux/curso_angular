@@ -1,0 +1,54 @@
+<!--------------------------------------------FORMULARIO----------------------------------------------->
+<div class="col-md-12 col-md-offset-1 sent-form" id="formulario-enviado">
+    <h2>¡Gracias!</h2>
+    <p>Tu formulario se ha enviado correctamente, pronto serás un guardián de Maleteo</p>
+</div>
+<div class="col-md-12 col-md-offset-1" id="formulario">
+    <div class="the-form">
+        <form action="https://httpbin.org/" method="POST" id="json-formulario">
+            <p class="the-form__title heading3">
+                Solicita una demo
+            </p>
+
+            <div class="the-form__group">
+                <label for="name">
+                  Nombre
+                </label>
+                <input type="text" id="name" class="the-form__input" placeholder="Mike Renkov">
+            </div>
+
+            <div class="the-form__group">
+                <label for="name">
+                  Email
+                </label>
+                <input type="email" id="name" class="the-form__input" placeholder="mikhail@renkov.ru">
+            </div>
+            <div class="the-form__group">
+                <label for="time">Horario preferido</label>
+                <input class="the-form__input" id="time" type="time" />
+            </div>
+            <div class="the-form__group">
+                <label for="city">
+                  Ciudad
+                </label>
+                <select name="" id="city" class="the-form__input the-form__select">
+                  <option value="">Madrid</option>
+                  <option value="">Barcelona</option>
+                  <option value="">Cartagena</option>
+                  <option value="">Las Bahamas</option>
+                </select>
+            </div>
+            <div class="the-form__group input-range">
+                <input type="range" min="1" max="50" class="input-range__slider">
+            </div>
+            <div class="the-form__group the-form__group_checkbox">
+                <input type="checkbox" id="privacity">
+                <label for="privacity">
+                  Aceptas la <a href="#">política de privacidad</a>
+                </label>
+            </div>
+
+            <input type="submit" class="btn btn-lg btn-primary" value="Enviar">
+        </form>
+    </div>
+</div>
