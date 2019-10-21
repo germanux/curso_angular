@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Solicitud } from '../modelo/Solicitud';
+import { SolicitudesService } from '../solicitudes.service';
 
 @Component({
   selector: 'app-registro',
@@ -11,7 +12,7 @@ export class RegistroComponent implements OnInit {
   nuevaSolicitud: Solicitud;
   politicaAcep: boolean;
 
-  constructor() {
+  constructor(private srvSolicitudes: SolicitudesService) {
    }
 
   ngOnInit() {
@@ -20,6 +21,6 @@ export class RegistroComponent implements OnInit {
   }
   enviar() {
     // alert(this.nuevaSolicitud.getNombre());
-    
+    this.srvSolicitudes.enviar(this.nuevaSolicitud);
   }
 }
