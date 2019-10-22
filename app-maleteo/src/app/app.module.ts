@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RegistroComponent } from './registro/registro.component';
+import { ListadoComponent } from './listado/listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistroComponent
+    RegistroComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule,

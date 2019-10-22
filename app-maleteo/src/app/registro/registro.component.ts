@@ -14,12 +14,6 @@ export class RegistroComponent implements OnInit {
   solic: Solicitud[];
 
   constructor(private srvSolicitudes: SolicitudesService) {
-    srvSolicitudes.recibir().subscribe( (resp) => {
-      this.solic = resp;
-      alert(resp);
-
-    }, (e) => {console.log(e)} );;
-    console.log("resp");
    }
 
   ngOnInit() {
