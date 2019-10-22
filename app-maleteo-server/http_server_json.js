@@ -1,7 +1,6 @@
 
 var http = require("http");
 var url = require("url");
-const bodyParser = require('body-parser');
 
 //app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,7 +38,7 @@ var server = http.createServer(
 		
 		if (request.method === 'OPTIONS') {
 			response.writeHead(204, headers);
-			  response.end('Recibido por OPTIONS: ');
+			response.end();
 			return;
 		  }
 		else  if (request.method == 'POST') {
