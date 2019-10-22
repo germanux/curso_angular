@@ -5,14 +5,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class SolicitudesService {
-  urlApiRest = "https://httpbin.org/post";
+  urlApiRest = "http://localhost:8888/solicitudes";
   httpOpciones = {
     headers: new HttpHeaders({
-      'Content-Type': "application/x-www-form-urlencoded"
+      'Content-Type': "application/json" // "application/x-www-form-urlencoded"
     })
   }
   constructor(private srvHttp: HttpClient) {
-
    }
 
   enviar(solicitud: Solicitud) : void {
@@ -21,5 +20,9 @@ export class SolicitudesService {
     obsRespuesta.subscribe((resp) => {
       alert(resp);
     });
+  }
+  recibir() : Observable<Solicitud[]> {
+    
+    return this.srvHttp.get<Solicitud[]>(this.urlApiRest, this.httpOpciones);
   }
 }

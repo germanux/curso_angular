@@ -14,11 +14,13 @@ var server = http.createServer(
     (request, response) => {
 
 		 const headers = {
-			'Access-Control-Allow-Origin': '*',
-			'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
+/*			
 			'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
 			'Access-Control-Max-Age': 2592000, // 30 days
 			/** add other headers as per requirement */
+			'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
 			"Content-Type": "application/json"
 		  };
 		// Request headers you wish to allow
@@ -38,7 +40,7 @@ var server = http.createServer(
 		
 		if (request.method === 'OPTIONS') {
 			response.writeHead(204, headers);
-			response.end();
+			response.end("Ok");
 			return;
 		  }
 		else  if (request.method == 'POST') {
@@ -51,14 +53,8 @@ var server = http.createServer(
 			});
 			request.on('end', function() {
 			  console.log('Body: ' + body);
-		 const headers2 = {
-			'Access-Control-Allow-Origin': '*',
-			'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
-			'Access-Control-Max-Age': 2592000, // 30 days
-			/** add other headers as per requirement */
-			"Content-Type": "application/json"
-		  };
-			  response.writeHead(200, headers2);
+			
+			  response.writeHead(200, headers);
 			  response.end('Recibido por POST: ' + body);
 			  solicitudes.push(JSON.parse(body));
 			});			
