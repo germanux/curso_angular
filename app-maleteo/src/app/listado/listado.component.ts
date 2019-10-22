@@ -28,6 +28,6 @@ export class ListadoComponent implements OnInit {
   }
   cuandoRecibimosElJSON(respuesta: any) { // Fun Callback
     this.arraySolic = respuesta;
-    alert(this.arraySolic.length);
+    //alert(this.arraySolic.length);
   }
 }

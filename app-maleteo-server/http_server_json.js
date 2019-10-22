@@ -57,6 +57,9 @@ var server = http.createServer(
 			  response.writeHead(200, headers);
 			  response.end('Recibido por POST: ' + body);
 			  solicitudes.push(JSON.parse(body));
+
+			  // Guardarlo en un fichero todo el array o en bb.dd.
+			  // Moongose
 			});			
 		} 
 		else  if (request.method == 'GET') {

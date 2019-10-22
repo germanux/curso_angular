@@ -18,7 +18,7 @@ export class SolicitudesService {
     let obsRespuesta: Observable<any>;
     obsRespuesta = this.srvHttp.post(this.urlApiRest, solicitud, this.httpOpciones);
     obsRespuesta.subscribe((resp) => {
-      alert(resp);
+      // alert(resp);
     });
   }
   recibir() : Observable<Solicitud[]> {

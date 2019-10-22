@@ -43,6 +43,12 @@
             </div>
         </div>
     </div>
+    <nav>
+        <ul>
+            <li><a [routerLink]="['/registro']">Registro</a></li>
+            <li><a [routerLink]="['/listado']">Listado</a></li>
+        </ul>
+    </nav>
     <div class="wrapper">
         <div class="container-fluid">
 
@@ -126,9 +132,11 @@
                  class="app-form__app-img">
           </div>
         </div> -->
-
-                    <app-registro class="col-md-5"></app-registro>
-                    <app-listado></app-listado>
+        
+                <router-outlet></router-outlet>
+                
+                    <!-- <app-registro class="col-md-5"></app-registro>
+                    <app-listado></app-listado> -->
                 </div>
             </section>
             <!--------------------------------------------OPINIONES DE OTROS GUARDIANES----------------------------->
